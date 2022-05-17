@@ -8,6 +8,10 @@ function solution(phone_number) {
 
   //더 간단한 풀이
   answer = "*".repeat(phone_number.length - 4);
+
+  //또 다른 방법
+  //answer=answer.padStart(phone_number.length-4,'*');
+
   answer += phone_number.substr(phone_number.length - 4, 4);
   return answer;
 }
