@@ -9,5 +9,12 @@ function solution(s) {
   }
   if (p_cnt !== y_cnt) answer = false;
 
+  //forEach 사용하는 법
+  // const obj={}
+  // s.split("").forEach(e=>{
+  //     if(obj[e]===undefined) obj[e]=1
+  //     else obj[e]++
+  // })
+  // return obj.p===obj.y?true:false
   return answer;
 }
