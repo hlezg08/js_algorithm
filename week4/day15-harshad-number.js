@@ -1,5 +1,4 @@
 function solution(x) {
-  var answer = true;
   let arr = String(x)
     .split("")
     .map((e) => Number(e));
@@ -7,6 +6,11 @@ function solution(x) {
   for (let num of arr) {
     digit += num;
   }
-  if (x % digit !== 0) answer = false;
-  return answer;
+  return x % digit === 0;
+
+  //간단하게 리팩토링
+  // let digit=String(x).split("").reduce((acc,cur)=>{
+  //   return acc+Number(cur)
+  // },0)
+  // return x%digit===0;
 }
