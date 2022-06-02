@@ -6,4 +6,10 @@ function solution(numbers) {
     }
   }
   return answer.reduce((acc, cur) => acc + cur);
+
+  //다른 방법
+  //   return new Array(9).fill(1).reduce((acc,cur,i)=>{
+  //     const num=cur+i
+  //     return acc+(numbers.includes(num)?0:num)
+  // },0)
 }

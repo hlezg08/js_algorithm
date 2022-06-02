@@ -10,7 +10,7 @@ function gcd(a, b) {
   return a;
 }
 function lcm(a, b) {
-  return (((gcd(a, b) * a) / gcd(a, b)) * b) / gcd(a, b);
+  return (a * b) / gcd(a, b);
 }
 function solution(n, m) {
   var answer = [];
