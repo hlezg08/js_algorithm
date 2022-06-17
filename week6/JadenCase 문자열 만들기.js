@@ -1,18 +1,16 @@
+// 런타임 에러->공백 여러개일 때 예외 처리해서 통과
 function solution(s) {
-  const str = s.split(" ");
-  const new_s = [];
-  for (let el of str) {
-    new_s.push(el.toLowerCase());
-  }
-
+  s = s.toLowerCase();
+  const new_s = s.split(" ");
   const answer = [];
+
   for (let el of new_s) {
-    if (isNaN(Number(el[0]))) {
+    if (el !== "") {
       const capital = el[0].toUpperCase();
       el = el.substring(1, el.length);
       el = capital + el;
       answer.push(el);
-    } else answer.push(el);
+    } else answer.push(el); // 공백일 때도 push
   }
   return answer.join(" ");
 }
