@@ -1,13 +1,17 @@
+const bonus = ["S", "D", "T"];
 function solution(dartResult) {
-  // 숫자로 선언하지 말고 배열로 하면 편함
-  let answer = [];
+  let answer = []; // 숫자로 선언하지 말고 배열로 하면 편함
   for (let i = 1; i < dartResult.length; i++) {
     let number = Number(dartResult[i - 1]);
     if (dartResult[i - 2] === "1" && dartResult[i - 1] === "0") number = 10;
-    if (dartResult[i] === "S") answer.push(number);
-    if (dartResult[i] === "D") answer.push(number ** 2);
-    if (dartResult[i] === "T") answer.push(number ** 3);
 
+    // 보너스(S,D,T) 점수 계산
+    if (bonus.includes(dartResult[i])) {
+      const pow = bonus.indexOf(dartResult[i]) + 1;
+      answer.push(number ** pow);
+    }
+
+    // 옵션 점수 계산
     if (dartResult[i] === "#") answer[answer.length - 1] *= -1;
     if (dartResult[i] === "*") {
       answer[answer.length - 1] *= 2;
