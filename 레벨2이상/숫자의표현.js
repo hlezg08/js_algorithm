@@ -9,7 +9,7 @@ function solution(n) {
       if (tempTotal === n) {
         cnt++;
         break;
-      }
+      } else if (tempTotal > n) break;
     }
   }
   return cnt;
