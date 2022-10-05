@@ -3,8 +3,9 @@ function solution(priorities, location) {
   let queue = [];
 
   for (let i = 0; i < priorities.length; i++) {
-    queue.push([String.fromCharCode('A'.charCodeAt() + i), priorities[i]]);
+    queue.push([i, priorities[i]]);
   }
+
   while (true) {
     let temp = queue.shift();
     let pass = true;
@@ -18,9 +19,8 @@ function solution(priorities, location) {
     if (pass) result.push(temp);
     if (queue.length === 0) break;
   }
+
   for (let arr of result) {
-    if (location === arr[0].charCodeAt() - 'A'.charCodeAt()) {
-      return result.indexOf(arr) + 1;
-    }
+    if (location === arr[0]) return result.indexOf(arr) + 1;
   }
 }
