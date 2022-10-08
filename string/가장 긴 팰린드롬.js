@@ -11,5 +11,5 @@ function solution(s) {
       }
     }
   }
-  return Math.max(...answer);
+  return answer.length === 0 ? 1 : Math.max(...answer);
 }
