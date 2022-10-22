@@ -1,8 +1,8 @@
 // 테스트 10번: 런타임에러->시간초과
 function solution(number, k) {
-  number = number.split('').map(num => Number(num));
+  number = number.split("").map((num) => Number(num));
   let digit = number.length - k;
-  let answer = '';
+  let answer = "";
   let cur = 0;
 
   for (let i = digit; i >= 1; i--) {
