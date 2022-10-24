@@ -2,7 +2,6 @@
  * @param {number[]} arr
  * @return {number}
  */
-
 var minSetSize = function (arr) {
   const n = arr.length;
   let freq = {};
@@ -11,16 +10,14 @@ var minSetSize = function (arr) {
     else freq[num]++;
   }
 
-  let freqArr = [];
-  for (let key in freq) {
-    freqArr.push([Number(key), freq[key]]);
-  }
+  let freqArr = Object.values(freq).sort((a, b) => b - a);
+  let sum = 0;
+  let i = 0;
 
-  freqArr.sort((a, b) => b[1] - a[1]);
-
-  for (let i = 1; i <= freqArr.length; i++) {
-    let temp = freqArr.slice(0, i);
-    let sum = temp.reduce((prev, cur) => (prev += cur[1]), 0);
-    if (n - sum <= n / 2) return i;
+  while (true) {
+    sum += freqArr[i];
+    i++;
+    if (sum >= n / 2) break;
   }
+  return i;
 };
